@@ -1,6 +1,6 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
-const n = 5
+const n = 'ly'
 
 const url = 'https://api.roblox.com/users/get-by-username?username='
 const array = JSON.parse(fs.readFileSync('array.json'))
