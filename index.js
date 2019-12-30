@@ -15,10 +15,10 @@ const valid = file[n];
       const json = await res.json()
       if (json.success === false) {
         valid.push(i)
-        fs.writeFileSync('file.json', JSON.stringify(valid, null, 2))
+        fs.writeFileSync('file.json', JSON.stringify(file, null, 2))
         console.log(valid)
       }
-      fs.writeFileSync('array.json', JSON.stringify(file, null, 2))
+      fs.writeFileSync('array.json', JSON.stringify(array, null, 2))
       console.log(arr.shift())
     } catch (e) {
       console.error(e)
