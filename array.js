@@ -1,11 +1,11 @@
 const { performance } = require('perf_hooks')
 const fs = require('fs')
-const n = 6
+const n = 5
 
 const αβ = 'abcdefghijklmnopqrstuvwxyz'
 const arr = []
 
-for (let i = 0; i < 26 ** n; i++) {
+for (let i = 0; i < 26 ** 4; i++) {
   let ign = ''
   let _i = i
   while (_i > 25) {
@@ -19,8 +19,8 @@ for (let i = 0; i < 26 ** n; i++) {
 
 console.log('done:', performance.now() + 'ms')
 
-const obj = JSON.parse(fs.readFileSync('./array.json'))
-const file = JSON.parse(fs.readFileSync('./file.json'))
+const obj = JSON.parse(fs.readFileSync('array.json'))
+const file = JSON.parse(fs.readFileSync('file.json'))
 
 console.log('read:', performance.now() + 'ms')
 
@@ -29,5 +29,5 @@ if (!obj[n] && !file[n]) {
   file[n] = []
 }
 
-fs.writeFileSync('./array.json', JSON.stringify(obj, null, 2))
-fs.writeFileSync('./file.json', JSON.stringify(file, null, 2))
+fs.writeFileSync('array.json', JSON.stringify(obj, null, 2))
+fs.writeFileSync('file.json', JSON.stringify(file, null, 2))

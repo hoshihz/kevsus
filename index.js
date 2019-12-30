@@ -1,11 +1,12 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
+const n = 5
 
 const url = 'https://api.roblox.com/users/get-by-username?username='
 const array = JSON.parse(fs.readFileSync('array.json'))
-const valid = file.four
 const file = JSON.parse(fs.readFileSync('file.json'))
-const arr = array.four
+const arr = array[n]
+const valid = file[n];
 
 (async () => {
   for (let i of arr) {
@@ -17,6 +18,7 @@ const arr = array.four
         fs.writeFileSync('file.json', JSON.stringify(valid, null, 2))
         console.log(valid)
       }
+      fs.writeFileSync('array.json', JSON.stringify(file, null, 2))
       console.log(arr.shift())
     } catch (e) {
       console.error(e)
